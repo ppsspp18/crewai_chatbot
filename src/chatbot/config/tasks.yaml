@@ -1,0 +1,22 @@
+conv_task:
+  description: >
+    Answer questions about a specific {question} by providing accurate and concise information.
+  expected_output: >
+    one or two paragraph address the {question}
+  agent: Answer_agent
+
+anotherQuestion_task:
+  description: >
+    Ask 2-3 follow-up questions in the end to clarify or expand on the {question}.
+  expected_output: >
+    moodify output of the conv_task and ask 2-3 follow-up questions.
+    A fully fledged report with the main topics, each with a full section of information.
+    Formatted as markdown without '```'
+  agent: anotherQuestion
+
+save_task:
+  description: >
+    Save the conversation to a file.
+  expected_output: >
+    A file with the conversation saved in markdown format.
+  agent: Save_agent
